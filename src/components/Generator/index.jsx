@@ -8,12 +8,7 @@ const Generator = () => {
 
   return (
     <div>
-      <FileInput
-        addImage={(qr) => {
-          console.log("adding file", qrCodes.length);
-          setQrCodes([...qrCodes, qr]);
-        }}
-      />
+      <FileInput qrCodes={qrCodes} setQrCodes={setQrCodes} />
       {qrCodes.map((qr, idx) => (
         <div key={idx}>
           <img src={qr} alt="QR Code" width={372} height={377} />

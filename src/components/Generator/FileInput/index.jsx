@@ -13,18 +13,20 @@ const readImage = (file) => {
   });
 };
 
-const FileInput = ({ addImage = () => null }) => {
-  const onDrop = useCallback(async (acceptedFiles) => {
+const FileInput = ({ setQrCodes = () => null }) => {
+  const onDrop = async (acceptedFiles) => {
+    const images = [];
     for (const file of acceptedFiles) {
       const image = await readImage(file);
-      addImage(image);
+      images.push(image);
     }
-  }, []);
+    setQrCodes(images);
+  };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    <div>
+    <div className={"d-print-none"}>
       <div {...getRootProps()} className={s.fie_input}>
         <input {...getInputProps()} />
         {isDragActive ? (

@@ -5,7 +5,7 @@ import Generator from "../components/Generator";
 const IndexPage = () => {
   return (
     <>
-      <div className="container text-center">
+      <div className="container text-center d-print-none">
         <h1 className={"h2 mt-5 mb-4"}>Fuel Pass Generator</h1>
       </div>
 
@@ -16,7 +16,7 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <footer>
+      <footer className={"d-print-none"}>
         <div className="container text-center">
           <hr />
           <div className="row justify-content-center">
