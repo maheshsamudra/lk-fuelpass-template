@@ -1,11 +1,20 @@
 import * as React from "react";
+import Generator from "../components/Generator";
 
 // markup
 const IndexPage = () => {
   return (
     <>
       <div className="container text-center">
-        <h1 className={"h2"}>Fuel Pass Generator</h1>
+        <h1 className={"h2 mt-5 mb-4"}>Fuel Pass Generator</h1>
+      </div>
+
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-lg-8 my-5">
+            <Generator />
+          </div>
+        </div>
       </div>
       <footer>
         <div className="container text-center">
