@@ -4,14 +4,15 @@ import FileInput from "./FileInput";
 const Generator = () => {
   const [qrCodes, setQrCodes] = useState([]);
 
+  console.log(qrCodes);
+
   return (
     <div>
       <FileInput
-        setQrCodes={(qr) => {
-          console.log("adding file");
-          setQrCodes(qr);
+        addImage={(qr) => {
+          console.log("adding file", qrCodes.length);
+          setQrCodes([...qrCodes, qr]);
         }}
-        qrCodes={qrCodes}
       />
       {qrCodes.map((qr, idx) => (
         <div key={idx}>
